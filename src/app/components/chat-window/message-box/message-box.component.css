@@ -1,0 +1,24 @@
+.message {
+    width: 500px;
+    overflow-y: hidden;
+    margin: 5px 5px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: azure;
+    position: relative;
+}
+
+.meta {
+    font-size: 10px;
+    bottom: 10px;
+}
+
+.gap {
+    height: 5px;
+    width: 100%;
+}
+
+.me {
+    position: relative;
+    left: 570px;
+}

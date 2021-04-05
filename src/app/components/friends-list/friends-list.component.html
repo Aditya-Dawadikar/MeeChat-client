@@ -1,0 +1,10 @@
+<div class="friend-list">
+    <div class="top-bar-container">
+        <app-top-bar [userName]=user.userName></app-top-bar>
+        <ul>
+            <li *ngFor="let friend of friends">
+                <app-friend [friend]=friend (click)="loadChat(friend)"></app-friend>
+            </li>
+        </ul>
+    </div>
+</div>

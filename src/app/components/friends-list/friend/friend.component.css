@@ -1,0 +1,59 @@
+.friend {
+    width: 440px;
+    height: 100px;
+    background-color: #3F4652;
+    margin: 5px;
+}
+
+.friend:hover {
+    background-color: #4d5664;
+    cursor: pointer;
+}
+
+.container {
+    height: calc(100% - 5px);
+    margin: 5px 5px;
+    display: flex;
+}
+
+.avatar-container {
+    position: relative;
+    top: 25px;
+    left: 15px;
+}
+
+.info-container {
+    width: 390px;
+    position: relative;
+    left: 25px;
+}
+
+.user-name {
+    font-size: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    position: relative;
+    top: 40px;
+    color: white;
+}
+
+.latest-chat {
+    font-size: 20px;
+    height: 18px;
+    margin-bottom: 3px;
+    position: relative;
+    top: 10px;
+    padding-left: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.meta-info {
+    font-size: 15px;
+    height: 15px;
+    margin-bottom: 3px;
+    position: absolute;
+    bottom: 5px;
+    color: black;
+    right: 35px;
+}
