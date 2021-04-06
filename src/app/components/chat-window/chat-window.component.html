@@ -1,17 +1,17 @@
 <div class="chat-window">
-    <div class="top-bar-container">
-        <app-top-bar [userName]=friend.userName></app-top-bar>
-    </div>
-    <div class="chat-area">
-        <ul class="chats">
-            <li *ngFor="let message of messages">
-                <app-message-box [message]=message></app-message-box>
-            </li>
-        </ul>
-    </div>
-    <div class="editor-container">
-        <app-message-editor [receiver]=friend [chatId]=chatId [self]=me></app-message-editor>
+    <div [class.hide]="windowStatus===false">
+        <div class="top-bar-container">
+            <app-top-bar-friend [userName]=friend.userName [father]="'friendProfile'"></app-top-bar-friend>
+        </div>
+        <div class="chat-area">
+            <ul class="chats">
+                <li *ngFor="let message of messages">
+                    <app-message-box [message]=message></app-message-box>
+                </li>
+            </ul>
+        </div>
+        <div class="editor-container">
+            <app-message-editor [receiver]=friend [chatId]=chatId [self]=me></app-message-editor>
+        </div>
     </div>
 </div>
-
-<!--<div class="cover" [ngClass]="{'hide':first===true}"></div>-->

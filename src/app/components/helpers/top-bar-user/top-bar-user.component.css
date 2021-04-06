@@ -1,0 +1,72 @@
+.top-bar {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #6B7686, #97A3AA);
+    display: flex;
+    padding: 15px 15px;
+}
+
+.user-name {
+    margin: auto 10px;
+    font-size: 24px;
+}
+
+.menu-icon {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    right: 10px;
+    top: 15px
+}
+
+.menu-icon:hover {
+    background-color: #b1b8bd;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.dot {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    background-color: black;
+}
+
+.dot-first {
+    margin-top: 15px;
+}
+
+.dot-mid {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+/**/
+
+.menu-box {
+    width: 200px;
+    height: auto;
+    background-color: azure;
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    z-index: 100;
+    box-shadow: rgba(207, 203, 203, 0.5) 0px 4px 6px -1px, rgba(207, 203, 203, 0.5) 0px 2px 4px -1px;
+}
+
+.li-item {
+    height: 40px;
+    padding-top: 15px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.li-item:hover {
+    background-color: rgb(195, 236, 255);
+}
+
+.hide {
+    display: none;
+}

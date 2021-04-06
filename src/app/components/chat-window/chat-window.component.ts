@@ -20,15 +20,22 @@ export class ChatWindowComponent implements OnInit {
   messages:Message[];
   first=true;
   chatId:number;
+  windowStatus:boolean;
 
   constructor(private loadChatService:LoadChatService) { }
 
   ngOnInit(): void {
     this.me=users[0];
+    if(this.friend===undefined){
+      this.windowStatus=false;
+    }else{
+      this.windowStatus==true;
+    }
     this.loadChatService.friendUser$.subscribe(
       friendUser=>{
         this.friend=friendUser;
         this.loadChat();
+        this.windowStatus=true;
       }
     );
   }

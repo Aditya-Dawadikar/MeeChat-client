@@ -1,0 +1,23 @@
+<div class="top-bar">
+    <div class="avatar-mid"></div>
+    <div class="user-name">{{userName}}</div>
+    <div class="menu-icon" (click)="toggleMenu()">
+        <div class="dot dot-first"></div>
+        <div class="dot dot-mid"></div>
+        <div class="dot"></div>
+    </div>
+</div>
+
+<div class="menu-box" [class.hide]="menuHidden">
+    <ul class="ul-item">
+        <li>
+            <div class="li-item">My Profile</div>
+        </li>
+        <li>
+            <div class="li-item">Settings</div>
+        </li>
+        <li>
+            <div class="li-item">Logout</div>
+        </li>
+    </ul>
+</div>

@@ -1,6 +1,6 @@
 <div class="friend-list">
     <div class="top-bar-container">
-        <app-top-bar [userName]=user.userName></app-top-bar>
+        <app-top-bar-user [userName]=user.userName [father]="'userProfile'"></app-top-bar-user>
         <ul>
             <li *ngFor="let friend of friends">
                 <app-friend [friend]=friend (click)="loadChat(friend)"></app-friend>
