@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar-friend',
@@ -10,10 +11,18 @@ export class TopBarFriendComponent implements OnInit {
 
   @Input() userName:string;
   @Input() father:string;
+  @ViewChild('menuButton') menuButton:ElementRef;
+  @ViewChild('menuBox') menuBox:ElementRef;
 
   menuStatus:boolean;
 
-  constructor() { }
+  constructor(private renderer:Renderer2,private router:Router) {
+    this.renderer.listen('window','click',(e:Event)=>{
+      if(e.target!=this.menuButton.nativeElement && e.target!=this.menuBox.nativeElement){
+        this.menuStatus=true;
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.menuStatus=true;
@@ -21,6 +30,10 @@ export class TopBarFriendComponent implements OnInit {
 
   toggleMenu(){
     this.menuStatus=!this.menuStatus;
+  }
+
+  visitProfile(){
+    this.router.navigateByUrl('/profile');
   }
 
 }

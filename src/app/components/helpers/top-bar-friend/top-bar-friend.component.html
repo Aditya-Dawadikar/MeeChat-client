@@ -1,14 +1,10 @@
-<div class="top-bar">
+<div class="top-bar" >
     <div class="avatar-mid"></div>
-    <div class="user-name">{{userName}}</div>
-    <div class="menu-icon" (click)="toggleMenu()">
-        <div class="dot dot-first"></div>
-        <div class="dot dot-mid"></div>
-        <div class="dot"></div>
-    </div>
+    <div class="user-name" (click)='visitProfile()'>{{userName}}</div>
+    <img src="https://img.icons8.com/material-two-tone/24/ffffff/menu-2.png" class="menu-btn" #menuButton (click)="toggleMenu()">
 </div>
 
-<div class="menu-box" [class.hide]="menuStatus">
+<div class="menu-box" [class.hide]="menuStatus" #menuBox>
     <ul class="ul-item">
         <li>
             <div class="li-item">Profile</div>

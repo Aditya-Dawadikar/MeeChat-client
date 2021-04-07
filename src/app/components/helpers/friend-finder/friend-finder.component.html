@@ -1,0 +1,7 @@
+<div class="friend-finder" id="style-4">
+  <ul class="ul-item">
+    <li class="utility"  *ngFor="let friend of friends" (click)="showFriendProfile(friend)">
+      {{friend.friendName}}
+    </li>
+  </ul>
+</div>

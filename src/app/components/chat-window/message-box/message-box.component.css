@@ -1,8 +1,7 @@
 .message {
     width: 500px;
-    overflow-y: hidden;
     margin: 5px 5px;
-    padding: 10px 10px;
+    padding: 20px 10px;
     border-radius: 10px;
     background-color: azure;
     position: relative;
@@ -21,4 +20,16 @@
 .me {
     position: relative;
     left: 570px;
+}
+
+.caret{
+  opacity: 0.2;
+  position: absolute;
+  top:0px;
+  right: 3px;
+  cursor: pointer;
+}
+
+.caret:hover{
+  opacity: 0.8;
 }

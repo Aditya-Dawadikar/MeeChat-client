@@ -1,12 +1,20 @@
 .friend {
-    width: 440px;
+    width: 430px;
     height: 100px;
     background-color: #3F4652;
     margin: 5px;
 }
 
+.active{
+  background-color: #7951EA;
+  color:white;
+  font-weight: bold;
+}
+
 .friend:hover {
-    background-color: #4d5664;
+    background-color: #7951EA;
+    color:white;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -29,12 +37,11 @@
 }
 
 .user-name {
-    font-size: 24px;
+    font-size: 18px;
     height: 24px;
     margin-bottom: 5px;
     position: relative;
     top: 40px;
-    color: white;
 }
 
 .latest-chat {

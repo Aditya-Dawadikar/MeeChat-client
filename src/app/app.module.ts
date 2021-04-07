@@ -11,6 +11,12 @@ import { FriendComponent } from './components/friends-list/friend/friend.compone
 import { MessageBoxComponent } from './components/chat-window/message-box/message-box.component';
 import { TopBarUserComponent } from './components/helpers/top-bar-user/top-bar-user.component';
 import { TopBarFriendComponent } from './components/helpers/top-bar-friend/top-bar-friend.component';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { MessageOptionsComponent } from './components/helpers/message-options/message-options.component';
+import { FriendFinderComponent } from './components/helpers/friend-finder/friend-finder.component';
+import { FriendProfileComponent } from './components/helpers/friend-profile/friend-profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,13 @@ import { TopBarFriendComponent } from './components/helpers/top-bar-friend/top-b
     FriendComponent,
     MessageBoxComponent,
     TopBarUserComponent,
-    TopBarFriendComponent
+    TopBarFriendComponent,
+    ChatPageComponent,
+    LoginPageComponent,
+    ProfilePageComponent,
+    MessageOptionsComponent,
+    FriendFinderComponent,
+    FriendProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import {users} from 'src/shared/Mock data/users';
 import {User} from 'src/shared/user';
 import {Chats} from 'src/shared/Mock data/chats';
@@ -13,14 +13,15 @@ import {LoadChatService} from 'src/app/services/load-chat.service';
   styleUrls: ['./chat-window.component.css']
 })
 export class ChatWindowComponent implements OnInit {
-
   me:User;
   friend:User;
   conversation:Chat;
   messages:Message[];
-  first=true;
   chatId:number;
   windowStatus:boolean;
+  scrollHeight:number;
+
+  first=true;
 
   constructor(private loadChatService:LoadChatService) { }
 
@@ -50,5 +51,4 @@ export class ChatWindowComponent implements OnInit {
     this.conversation=Chats[this.chatId];
     this.messages=this.conversation.conversation;
   }
-
 }

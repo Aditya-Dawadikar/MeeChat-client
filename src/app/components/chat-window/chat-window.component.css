@@ -1,5 +1,5 @@
 .chat-window {
-    width: 1085px;
+    width: 1086px;
     height: 100vh;
     position: relative;
     background-color: #3F4652;
@@ -22,6 +22,10 @@
 .chats {
     list-style: none;
     position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: inherit;
+    height: inherit;
 }
 
 .cover {
@@ -35,3 +39,17 @@
 .hide {
     display: none;
 }
+
+#style-4::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+    background-color: #ff3f3f;
+}
+

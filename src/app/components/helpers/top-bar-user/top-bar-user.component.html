@@ -1,23 +1,21 @@
-<div class="top-bar">
+<div class="top-bar" >
     <div class="avatar-mid"></div>
-    <div class="user-name">{{userName}}</div>
-    <div class="menu-icon" (click)="toggleMenu()">
-        <div class="dot dot-first"></div>
-        <div class="dot dot-mid"></div>
-        <div class="dot"></div>
-    </div>
+    <div class="user-name" (click)="visitProfile()">{{userName}}</div>
+    <img src="https://img.icons8.com/material-two-tone/24/ffffff/menu-2.png" class="menu-btn" #menuButton (click)="toggleMenu()">
+
 </div>
 
-<div class="menu-box" [class.hide]="menuHidden">
+<div class="menu-box" [class.hide]="menuHidden" #menuBox>
     <ul class="ul-item">
-        <li>
+        <li (click)="visitProfile()">
             <div class="li-item">My Profile</div>
         </li>
         <li>
             <div class="li-item">Settings</div>
         </li>
         <li>
-            <div class="li-item">Logout</div>
+            <div class="li-item" (click)="visitLoginGateway()">Logout</div>
         </li>
     </ul>
 </div>
+

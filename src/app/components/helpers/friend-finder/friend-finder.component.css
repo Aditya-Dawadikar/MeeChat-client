@@ -1,0 +1,36 @@
+.friend-finder{
+  width: 20vw;
+  height: 100vh;
+  overflow-y: scroll;
+  box-shadow: rgba(221, 221, 253, 0.658) 0px 1px 0px, rgba(221, 221, 253, 0.658) 0px 0px 3px;
+}
+
+#style-4::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+  background-color: #ff3f3f;
+}
+
+
+.utility{
+  height: 70px;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 5px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 25px;
+}
+
+.utility:hover{
+  background-color: #7951EA;
+  cursor: pointer;
+}

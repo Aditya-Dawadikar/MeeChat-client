@@ -1,0 +1,33 @@
+.message-utility{
+  position: absolute;
+  right:30px;
+  top:20px;
+  z-index: 8;
+  background-color: azure;
+  min-height: 200px;
+}
+.message-options{
+  position: absolute;
+  right:0px;
+  width: 200px;
+  height: auto;
+  z-index: 100;
+  background-color: azure;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 6px -4px, rgba(0, 0, 0, 0.6) 0px 2px 4px -4px;
+}
+
+.li-item {
+  width: 200px;
+  height: 40px;
+  padding-top: 15px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.li-item:hover {
+  background-color: rgb(195, 236, 255);
+}
+
+.hide{
+  display: none;
+}

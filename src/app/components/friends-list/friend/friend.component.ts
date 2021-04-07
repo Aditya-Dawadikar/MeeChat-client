@@ -1,9 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { User } from 'src/shared/user';
 import {users} from 'src/shared/Mock data/users';
 import { Friend } from 'src/shared/friend';
 import {Chats} from 'src/shared/Mock data/chats';
 import { from } from 'rxjs';
+
+import {LoadChatService} from 'src/app/services/load-chat.service';
 
 @Component({
   selector: 'app-friend',
@@ -17,8 +19,18 @@ export class FriendComponent implements OnInit {
   user:User;
   lastMessage:string;
   meta:string;
-
-  constructor() {
+  active:boolean;
+  constructor(private loadChatService:LoadChatService) {
+    this.active=false;
+    this.loadChatService.friendUser$.subscribe(
+      friendUser=>{
+        if(this.friend.friendName===friendUser.userName){
+          this.active=true;
+        }else{
+          this.active=false;
+        }
+      }
+    );
   }
 
   ngOnInit(): void {
@@ -44,4 +56,9 @@ export class FriendComponent implements OnInit {
           ":"+date.getSeconds()
     return s;
   }
+
+  setActive(){
+    this.active=true;
+  }
+
 }

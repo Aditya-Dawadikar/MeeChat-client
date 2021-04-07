@@ -1,5 +1,11 @@
 <div class="message" [ngClass]="{'me':localSender}">
+    <img src="https://img.icons8.com/material-two-tone/24/ffffff/expand-arrow--v1.png" class="caret" #caret (click)="caretClicked()">
     <div class="body">{{message.body}}</div>
     <div class="gap"></div>
     <div class="meta">{{timing}}</div>
+    <app-message-options [state]="messageOptionHide" #msg></app-message-options>
 </div>
+
+
+
+

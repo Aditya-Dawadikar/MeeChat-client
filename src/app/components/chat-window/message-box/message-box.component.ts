@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import {Message} from 'src/shared/message';
 import { User } from 'src/shared/user';
 import {users} from 'src/shared/Mock data/users';
@@ -12,10 +12,20 @@ export class MessageBoxComponent implements OnInit {
   user:User;
 
   @Input() message:Message;
+  @ViewChild('caret') caretButton:ElementRef;
+  @ViewChild('msg') msgBox:ElementRef;
 
   localSender:Boolean=false;
   timing:string;
-  constructor() { }
+  messageOptionHide=true;
+
+  constructor(private rendered: Renderer2) {
+      this.rendered.listen('window','click',(e:Event)=>{
+        if(e.target!=this.caretButton.nativeElement && e.target!=this.msgBox.nativeElement){
+          this.messageOptionHide=true;
+        }
+      });
+   }
 
   ngOnInit(): void {
     this.user=users[0];
@@ -37,6 +47,10 @@ export class MessageBoxComponent implements OnInit {
           ":"+date.getMinutes()+
           ":"+date.getSeconds()
     return s;
+  }
+
+  caretClicked(){
+    this.messageOptionHide=!this.messageOptionHide;
   }
 
 }

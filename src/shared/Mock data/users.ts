@@ -17,6 +17,18 @@ export const users:User[]=[
         chatId:1,
       }
     ],
+    blocked:[
+      {
+        friendName:"abc",
+        userId:11,
+        chatId:0,
+      },
+      {
+        friendName:"def",
+        userId:12,
+        chatId:0,
+      }
+    ]
   },
   {
     id:1,
@@ -34,6 +46,7 @@ export const users:User[]=[
         chatId:2,
       }
     ],
+    blocked:[],
   },
   {
     id:2,
@@ -46,6 +59,7 @@ export const users:User[]=[
         chatId:1,
       }
     ],
+    blocked:[],
   },
   {
     id:3,
@@ -58,5 +72,18 @@ export const users:User[]=[
         chatId:2,
       }
     ],
+    blocked:[],
+  },{
+    id:11,
+    userName:"abc",
+    avatar:"#",
+    friends:[],
+    blocked:[]
+  },{
+    id:12,
+    userName:"def",
+    avatar:"#",
+    friends:[],
+    blocked:[]
   },
 ]

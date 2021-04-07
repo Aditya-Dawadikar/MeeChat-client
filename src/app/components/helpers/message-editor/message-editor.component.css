@@ -35,7 +35,8 @@
 }
 
 .send-button:hover {
-    background-color: #38586b;
+    background-color: #68ff75;
+    transform: scale(1.1);
     cursor: pointer;
 }
 
