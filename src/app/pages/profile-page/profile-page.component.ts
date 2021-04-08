@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { from } from 'rxjs';
+import { Router,ActivatedRoute } from '@angular/router';
 import { Friend } from 'src/shared/friend';
 import { User } from 'src/shared/user';
 import {users} from 'src/shared/Mock data/users';
+import {LoginSignupService} from 'src/app/services/login-signup.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -12,7 +12,6 @@ import {users} from 'src/shared/Mock data/users';
 })
 export class ProfilePageComponent implements OnInit {
 
-  constructor(private router:Router) { }
 
   state=['account','friends','notifications'];
   friendOptions=['all friends','blocked'];
@@ -21,17 +20,24 @@ export class ProfilePageComponent implements OnInit {
   currentState:string;
   currentOption:string;
   hideFriendView:boolean;
+  hideAll:boolean;
 
   me:User;
   friends:Friend[];
   blocked:Friend[];
 
+  constructor(
+      private router:Router,
+      private authUserObject:LoginSignupService,
+      private activatedRoute:ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
+    //this.me=users[0];
+    this.me=this.authUserObject.getAuthUser();
     this.currentState=this.state[0];
     this.currentOption=this.friendOptions[0];
     this.hideFriendView=false;
-    this.me=users[0];
     this.friends=this.me.friends;
     this.blocked=this.me.blocked;
   }
@@ -50,7 +56,6 @@ export class ProfilePageComponent implements OnInit {
     this.currentState=this.state[2];
   }
 
-
   //show options and settings
   setFriendOption(index:number){
     this.currentOption=this.friendOptions[index];
@@ -64,4 +69,6 @@ export class ProfilePageComponent implements OnInit {
   visitChat(){
     this.router.navigateByUrl('/chat');
   }
+
+
 }

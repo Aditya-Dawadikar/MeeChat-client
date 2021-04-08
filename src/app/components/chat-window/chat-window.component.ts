@@ -6,6 +6,7 @@ import { Chat } from 'src/shared/chat';
 import {Message} from 'src/shared/message';
 
 import {LoadChatService} from 'src/app/services/load-chat.service';
+import {LoginSignupService} from 'src/app/services/login-signup.service';
 
 @Component({
   selector: 'app-chat-window',
@@ -21,12 +22,20 @@ export class ChatWindowComponent implements OnInit {
   windowStatus:boolean;
   scrollHeight:number;
 
+  block=false;
   first=true;
 
-  constructor(private loadChatService:LoadChatService) { }
+  @ViewChild('chats') chatArea:ElementRef;
+
+  constructor(
+      private loadChatService:LoadChatService,
+      private getUserObject:LoginSignupService
+    ) {
+    }
 
   ngOnInit(): void {
-    this.me=users[0];
+    //this.me=users[0];
+    this.me=this.getUserObject.getAuthUser();
     if(this.friend===undefined){
       this.windowStatus=false;
     }else{
@@ -34,21 +43,29 @@ export class ChatWindowComponent implements OnInit {
     }
     this.loadChatService.friendUser$.subscribe(
       friendUser=>{
-        this.friend=friendUser;
-        this.loadChat();
-        this.windowStatus=true;
+          this.friend=friendUser;
+          this.loadChat();
+          this.windowStatus=true;
       }
     );
   }
 
+  ngAfterViewChecked(){
+    this.scrollToBottom();
+  }
+
   loadChat(){
     for(let i=0;i<this.me.friends.length;i++){
-      if(this.me.friends[i].friendName.localeCompare(this.friend.userName)){
+      if(this.me.friends[i].friendName.localeCompare(this.friend.userName)===0){
         this.chatId=this.me.friends[i].chatId;
         break;
       }
     }
     this.conversation=Chats[this.chatId];
     this.messages=this.conversation.conversation;
+  }
+
+  scrollToBottom(){
+    this.chatArea.nativeElement.scrollTop=this.chatArea.nativeElement.scrollHeight;
   }
 }

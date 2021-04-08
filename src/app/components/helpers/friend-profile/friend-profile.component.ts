@@ -16,6 +16,7 @@ export class FriendProfileComponent implements OnInit {
   ngOnInit(): void {
     this.profileObject.profileObserver.subscribe((profile:User)=>{
       this.user=profile;
+      console.log(this.user);
     });
   }
 

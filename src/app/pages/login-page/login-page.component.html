@@ -9,12 +9,12 @@
             </li>
         </ul>
         <br><br>
-        <form [ngClass]="{'hide':loginHide}" class="form" id="login" #lf="ngForm" (ngSubmit)="onSubmit()">
+        <form [ngClass]="{'hide':loginHide}" class="form" id="login" #lf="ngForm" (ngSubmit)="onLogin()">
             <div class="form-group">
                 <div class="line-container">
                     <label>UserName</label>
                     <div class="seperator"></div>
-                    <input type="text" id="username-login" name="username-l" #username="ngModel" [(ngModel)]="model.email" required>
+                    <input type="text" id="username-login" name="username-l" #username="ngModel" [(ngModel)]="loginObject.email" required>
                 </div>
             </div>
             <br>
@@ -22,7 +22,7 @@
                 <div class="line-container">
                     <label>Password</label>
                     <div class="seperator"></div>
-                    <input type="password" id="password-login" name="password-l" #password="ngModel" ngModel [(ngModel)]="model.password" required>
+                    <input type="password" id="password-login" name="password-l" #password="ngModel" ngModel [(ngModel)]="loginObject.password" required>
                 </div>
             </div>
             <br>
@@ -51,7 +51,7 @@
           <br>
           <div class="form-group">
             <div class="line-container">
-                <label>Conform Password</label>
+                <label>Confirm Password</label>
                 <div class="seperator"></div>
                 <input type="password" id="c-password-singup" name="c-password-s" #password="ngModel" ngModel [(ngModel)]="signupObject.comfirm" required pattern="{{signupObject.password}}">
             </div>

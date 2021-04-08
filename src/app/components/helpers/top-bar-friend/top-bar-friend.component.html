@@ -1,8 +1,11 @@
 <div class="top-bar" >
     <div class="avatar-mid"></div>
-    <div class="user-name" (click)='visitProfile()'>{{userName}}</div>
+    <div class="user-name" (click)='showModal()'>{{userName}}</div>
     <img src="https://img.icons8.com/material-two-tone/24/ffffff/menu-2.png" class="menu-btn" #menuButton (click)="toggleMenu()">
 </div>
+
+
+<app-pop-up-container [show]="show" (cancelModal)="closeModal()"></app-pop-up-container>
 
 <div class="menu-box" [class.hide]="menuStatus" #menuBox>
     <ul class="ul-item">

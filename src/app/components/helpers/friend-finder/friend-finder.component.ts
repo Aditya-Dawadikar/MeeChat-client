@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {  Component, Input, OnInit } from '@angular/core';
 import { Friend } from 'src/shared/friend';
 import {LoadUserProfileService} from 'src/app/services/load-user-profile.service';
 import {users} from 'src/shared/Mock data/users';
@@ -12,7 +12,6 @@ import {User} from 'src/shared/user';
 export class FriendFinderComponent implements OnInit {
 
   @Input() friends:Friend[];
-  //@Input() state:number;
 
   constructor(private loadProfileObject:LoadUserProfileService) { }
 
@@ -20,7 +19,6 @@ export class FriendFinderComponent implements OnInit {
   }
 
   showFriendProfile(friend:Friend){
-    console.log(friend);
     var targetProfile:User;
     for(let i=0;i<users.length;i++){
       if(friend.friendName===users[i].userName){
@@ -28,6 +26,10 @@ export class FriendFinderComponent implements OnInit {
         break;
       }
     }
+    this.loadProfileObject.loadUserProfile(targetProfile);
+  }
+
+  initializeView(targetProfile:User){
     this.loadProfileObject.loadUserProfile(targetProfile);
   }
 

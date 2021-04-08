@@ -7,10 +7,25 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class MessageOptionsComponent implements OnInit {
 
-  constructor() { }
   @Input() state:boolean;
 
+  show:boolean;
+
+  constructor(
+  ) { }
+
   ngOnInit(): void {
+    this.show=false;
   }
 
+  shareMessage(){
+    this.show=true;
+  }
+  deleteMessage(){
+    this.show=true;
+  }
+
+  closeModal(){
+    this.show=false;
+  }
 }

@@ -6,5 +6,6 @@ export interface Message{
   body:string;
   meta:{
     date:number;
+    seen:boolean;
   }
 }

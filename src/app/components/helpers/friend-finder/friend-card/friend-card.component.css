@@ -1,0 +1,40 @@
+.friend{
+  display: flex;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.friend:hover{
+  background-color: #7951EA;
+}
+
+.avatar{
+  height: 30px;
+  width: 30px;
+  background-color: azure;
+  border-radius: 50%;
+  position: relative;
+  top:10px;
+  left:10px;
+}
+
+.info{
+  color:white;
+  position: relative;
+  top:18px;
+  left:20px;
+}
+
+.user-name{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.status{
+  font-size: 14px;
+}
+
+.active{
+  background-color:#7951EA ;
+}

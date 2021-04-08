@@ -1,0 +1,10 @@
+<div class="message-utility" [class]="{'hide':state}">
+  <div class="message-options">
+    <ul class="ul-item">
+      <li class="li-item" (click)='shareMessage()'>Share</li>
+      <li class="li-item" (click)='deleteMessage()'>Delete</li>
+    </ul>
+  </div>
+</div>
+
+<app-pop-up-container [show]="show" (cancelModal)="closeModal()"></app-pop-up-container>

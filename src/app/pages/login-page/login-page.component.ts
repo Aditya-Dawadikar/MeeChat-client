@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
+import {AuthenticatedUsers} from 'src/shared/Mock data/authUsers';
+import {users} from 'src/shared/Mock data/users';
+import {User} from 'src/shared/user';
+import {LoginSignupService} from 'src/app/services/login-signup.service';
+import {Auth} from 'src/shared/Auth';
 
 @Component({
   selector: 'app-login-page',
@@ -10,12 +14,15 @@ import { Router } from '@angular/router';
 
 export class LoginPageComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(
+    private router:Router,
+    private loginSignUpServiceObject:LoginSignupService
+    ) { }
 
   @ViewChild('lf') lform:any;
   @ViewChild('sf') sform:any;
 
-  model:any={
+  loginObject:any={
     email:"",
     password:""
   };
@@ -28,23 +35,30 @@ export class LoginPageComponent implements OnInit {
 
   loginHide:boolean;
   signupHide:boolean;
+  foundUser:User;
 
   ngOnInit(): void {
     this.loginHide=false;
     this.signupHide=true;
   }
 
-  onSubmit(){
+  onLogin(){
     if(this.lform.valid){
-      console.log(this.model);
+      let isAuthenticated:boolean=false;
+      isAuthenticated=this.validateUser(this.loginObject);
+      if(isAuthenticated===true){
+        this.loginSignUpServiceObject.setAuthUser(this.foundUser);
+        this.visitChatPage();
+      }else{
+        alert("username and password doesnot match");
+      }
       this.lform.reset();
-      this.visitChatPage();
     }
   }
 
   onSignUp(){
     if(this.sform.valid){
-      console.log(this.signupObject);
+      this.registerNewUser();
       this.sform.reset();
       this.showLogin();
     }
@@ -62,6 +76,35 @@ export class LoginPageComponent implements OnInit {
 
   visitChatPage(){
     this.router.navigateByUrl('/chat');
+  }
+
+  validateUser(loginObject:any):boolean{
+    for(let i=0;i<AuthenticatedUsers.length;i++){
+      if(loginObject.email===AuthenticatedUsers[i].userName){
+        if(loginObject.password===AuthenticatedUsers[i].password){
+          this.foundUser=users[AuthenticatedUsers[i].id];
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  registerNewUser(){
+    let newUser:User={
+      userName:this.signupObject.email,
+      id:users.length,
+      avatar:"#",
+      friends:[],
+      blocked:[]
+    }
+    let newAuthUser:Auth={
+      userName:this.signupObject.email,
+      password:this.signupObject.password,
+      id:users.length
+    }
+    AuthenticatedUsers.push(newAuthUser);
+    users.push(newUser);
   }
 
 }

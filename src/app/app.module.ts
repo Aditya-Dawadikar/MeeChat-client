@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +15,14 @@ import { TopBarFriendComponent } from './components/helpers/top-bar-friend/top-b
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
-import { MessageOptionsComponent } from './components/helpers/message-options/message-options.component';
+import { MessageOptionsComponent } from './components/helpers/modals/message-options/message-options.component';
 import { FriendFinderComponent } from './components/helpers/friend-finder/friend-finder.component';
 import { FriendProfileComponent } from './components/helpers/friend-profile/friend-profile.component';
+import { FriendCardComponent } from './components/helpers/friend-finder/friend-card/friend-card.component';
+import { PopUpContainerComponent } from './components/helpers/modals/pop-up-container/pop-up-container.component';
+import { MiniProfileViewerComponent } from './components/helpers/modals/mini-profile-viewer/mini-profile-viewer.component';
+import { ShareWithFriendsComponent } from './components/helpers/modals/share-with-friends/share-with-friends.component';
+import { DeleteMessageComponent } from './components/helpers/modals/delete-message/delete-message.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +39,18 @@ import { FriendProfileComponent } from './components/helpers/friend-profile/frie
     ProfilePageComponent,
     MessageOptionsComponent,
     FriendFinderComponent,
-    FriendProfileComponent
+    FriendProfileComponent,
+    FriendCardComponent,
+    PopUpContainerComponent,
+    MiniProfileViewerComponent,
+    ShareWithFriendsComponent,
+    DeleteMessageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

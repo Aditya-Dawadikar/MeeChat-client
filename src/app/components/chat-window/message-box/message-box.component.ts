@@ -2,6 +2,9 @@ import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@ang
 import {Message} from 'src/shared/message';
 import { User } from 'src/shared/user';
 import {users} from 'src/shared/Mock data/users';
+
+import {LoginSignupService} from 'src/app/services/login-signup.service';
+
 @Component({
   selector: 'app-message-box',
   templateUrl: './message-box.component.html',
@@ -15,11 +18,13 @@ export class MessageBoxComponent implements OnInit {
   @ViewChild('caret') caretButton:ElementRef;
   @ViewChild('msg') msgBox:ElementRef;
 
-  localSender:Boolean=false;
   timing:string;
   messageOptionHide=true;
 
-  constructor(private rendered: Renderer2) {
+  constructor(
+    private rendered: Renderer2,
+    private authUserObject:LoginSignupService
+    ) {
       this.rendered.listen('window','click',(e:Event)=>{
         if(e.target!=this.caretButton.nativeElement && e.target!=this.msgBox.nativeElement){
           this.messageOptionHide=true;
@@ -28,24 +33,15 @@ export class MessageBoxComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.user=users[0];
-    if(this.message.receiver.localeCompare(this.user.userName)){
-      this.localSender=true;
-    }else{
-      this.localSender=false;
-    }
+    //this.user=users[0];
+    this.user=this.authUserObject.getAuthUser();
     this.timing=this.getDateFromTimeStamp(this.message.meta.date);
   }
 
   getDateFromTimeStamp(timeStamp:number){
     var s="";
     var date=new Date(timeStamp);
-    s+=date.getDate()+
-          "/"+(date.getMonth()+1)+
-          "/"+date.getFullYear()+
-          " "+date.getHours()+
-          ":"+date.getMinutes()+
-          ":"+date.getSeconds()
+    s+=date.getHours()+":"+date.getMinutes();
     return s;
   }
 

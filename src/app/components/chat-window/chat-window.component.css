@@ -53,3 +53,19 @@
     background-color: #ff3f3f;
 }
 
+.scroll-to-bottom{
+  width:30px;
+  height:30px;
+  background-color: azure;
+  position: absolute;
+  border-radius: 50%;
+  cursor:pointer;
+  z-index:10px;
+  left:20px;
+  bottom:120px;
+}
+
+.scroll-to-bottom:hover{
+  transform: scale(1.1);
+}
+

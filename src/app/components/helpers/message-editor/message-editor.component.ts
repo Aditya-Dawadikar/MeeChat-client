@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Friend } from 'src/shared/friend';
 import { User } from 'src/shared/user';
 import { Message } from 'src/shared/message';
-import{users} from 'src/shared/Mock data/users';
 import {Chats} from 'src/shared/Mock data/chats';
 import {LoadChatService} from 'src/app/services/load-chat.service';
 
@@ -38,6 +36,7 @@ export class MessageEditorComponent implements OnInit {
       body:text,
       meta:{
         date:meta,
+        seen:false,
       }
     }
     console.log(message);
@@ -48,10 +47,24 @@ export class MessageEditorComponent implements OnInit {
     if(this.defaultValue!=""){
       let message:Message=this.generateMessageObject(this.defaultValue,this.self,this.receiver,Date.now());
       Chats[this.chatId].conversation.push(message);
+      this.reorderFriendList();
     }
     this.defaultValue='';
   }
 
+  reorderFriendList(){
+    let receiverIndex=this.getReceiverIndex();
+    this.self.friends.unshift(this.self.friends[receiverIndex]);
+    this.self.friends.splice(receiverIndex+1,1);
+  }
 
+  getReceiverIndex():number{
+    for(let i=0;i<this.self.friends.length;i++){
+      if(this.receiver.userName===this.self.friends[i].friendName){
+        return i;
+      }
+    }
+    return 0;
+  }
 
 }

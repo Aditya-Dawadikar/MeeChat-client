@@ -7,7 +7,7 @@ import {ChatPageComponent} from 'src/app/pages/chat-page/chat-page.component';
 
 const routes: Routes = [
   {path:'login',component:LoginPageComponent},
-  {path:'profile',component:ProfilePageComponent},
+  {path:'profile/:id',component:ProfilePageComponent},
   {path:'chat',component:ChatPageComponent}
 ];
 

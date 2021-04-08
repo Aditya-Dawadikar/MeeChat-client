@@ -3,7 +3,7 @@
     <div class="utility" (click)="visitChat()">
       Back to Chat <img src="https://img.icons8.com/ios-glyphs/30/ffffff/chat.png" class="icon-utility" id="back" >
     </div>
-    <div class="utility"></div>
+    <div class="seperator"></div>
     <ul class="ul-item">
       <li class="utility" [class]="{'active':currentState==state[0]}" (click)="showAccount()">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/key.png" class="icon-utility">Account
@@ -13,7 +13,7 @@
         <img src="https://img.icons8.com/ios-filled/50/ffffff/friends.png" class="icon-utility">Friends
       </li>
       <div class="line"></div>
-      <li class="utility"  [class]="{'active':currentState==state[2]}" (click)="showNotifications()">
+      <li class="utility" [class]="{'active':currentState==state[2]}" (click)="showNotifications()">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/bell.png" class="icon-utility">Notifications
       </li>
       <div class="line"></div>
@@ -21,7 +21,7 @@
   </div>
   <div class="main">
     <!-- Account view -->
-    <div class="account" [class]="{'hide':currentState!=state[0]}" >
+    <div *ngIf="currentState===state[0]">
       <div class="hero">
         <div class="avatar-l">
           <div class="change"><img src="https://img.icons8.com/pastel-glyph/64/000000/image--v1.png"/></div>
@@ -30,8 +30,8 @@
       <div class="seperator"></div>
       <div class="info">
         <div class="user-name">
-          Aditya Dawadikar
-          <div class="user-id">#0</div>
+          {{me.userName}}
+          <div class="user-id">#{{me.id}}</div>
         </div>
         <div class="status">chaotic</div>
         <br>
@@ -40,16 +40,16 @@
     </div>
 
     <!-- Friends view -->
-    <div [class]="{'hide':currentState!=state[1],'container':currentState==state[1]}" >
+    <div class="container" *ngIf="currentState===state[1]" >
       <div class="mid">
-        <div class="setting" [class]="{'active':currentOption==friendOptions[0]}" (click)="setFriendOption(0)">
+        <div class="setting" [class]="{'active':currentOption===friendOptions[0]}" (click)="setFriendOption(0)">
           All friends
         </div>
-        <div class="setting" [class]="{'active':currentOption==friendOptions[1]}" (click)="setFriendOption(1)">
+        <div class="setting" [class]="{'active':currentOption===friendOptions[1]}" (click)="setFriendOption(1)">
           Blocked
         </div>
       </div>
-      <div class="right" [class]="{'hide':hideFriendView}">
+      <div class="right" *ngIf="hideFriendView===false">
         <div class="userList" *ngIf="currentOption===friendOptions[0]" id="friendList">
           <app-friend-finder [friends]=friends></app-friend-finder>
           <app-friend-profile></app-friend-profile>
@@ -62,7 +62,7 @@
     </div>
 
     <!-- Notifications view -->
-    <div [class]="{'hide':currentState!=state[2],'container':currentState==state[2]}">
+    <div class="container" *ngIf="currentState===state[2]">
       <div class="mid">
         <div class="setting" [class]="{'active':currentOption==notificationOptions[0]}" (click)="setNotificationOption(0)">
           Volume

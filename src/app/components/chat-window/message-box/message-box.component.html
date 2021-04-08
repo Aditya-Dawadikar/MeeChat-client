@@ -1,11 +1,16 @@
-<div class="message" [ngClass]="{'me':localSender}">
+<div class="message" [ngClass]="{'me':message.sender===this.user.userName}">
     <img src="https://img.icons8.com/material-two-tone/24/ffffff/expand-arrow--v1.png" class="caret" #caret (click)="caretClicked()">
+    <div class="sender">{{message.sender}}</div>
+    <div class="gap"></div>
     <div class="body">{{message.body}}</div>
     <div class="gap"></div>
-    <div class="meta">{{timing}}</div>
+    <div class="meta">
+      {{timing}}
+      <img src="../../../../assets/sent.png" class="read" *ngIf="message.meta.seen===false && message.sender===user.userName">
+      <img src="../../../../assets/seen.png" class="read" *ngIf="message.meta.seen===true && message.sender===user.userName">
+    </div>
     <app-message-options [state]="messageOptionHide" #msg></app-message-options>
 </div>
-
 
 
 

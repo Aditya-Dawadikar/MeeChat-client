@@ -7,9 +7,11 @@
     position: relative;
 }
 
-.meta {
-    font-size: 10px;
-    bottom: 10px;
+.sender{
+  color:black;
+  font-weight: bold;
+  position: relative;
+  top:-10px;
 }
 
 .gap {
@@ -32,4 +34,18 @@
 
 .caret:hover{
   opacity: 0.8;
+}
+
+.meta {
+  font-size: 12px;
+  position: relative;
+  bottom: -10px;
+  left:430px;
+}
+.read{
+  position: relative;
+  height: 15px;
+  width: 15px;
+  bottom:-3px;
+  margin-left: 10px;
 }

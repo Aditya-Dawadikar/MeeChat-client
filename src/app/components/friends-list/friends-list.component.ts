@@ -2,7 +2,9 @@ import { Component, OnInit, Output } from '@angular/core';
 import {User} from 'src/shared/user';
 import { users } from 'src/shared/Mock data/users';
 import { Friend } from 'src/shared/friend';
+
 import {LoadChatService} from 'src/app/services/load-chat.service';
+import {LoginSignupService} from 'src/app/services/login-signup.service';
 
 @Component({
   selector: 'app-friends-list',
@@ -14,10 +16,14 @@ export class FriendsListComponent implements OnInit {
   user:User;
   friends:Friend[];
 
-  constructor(private loadChatServiceObject:LoadChatService) {}
+  constructor(
+    private loadChatServiceObject:LoadChatService,
+    private getUserObject:LoginSignupService
+    ) {}
 
   ngOnInit(): void {
-    this.user = users[0];
+    //this.user = users[0];
+    this.user=this.getUserObject.getAuthUser();
     this.friends=this.user.friends;
   }
 
@@ -30,6 +36,7 @@ export class FriendsListComponent implements OnInit {
       }
     }
     this.loadChatServiceObject.openChat(friendUser);
+    console.clear();
   }
 
 }
