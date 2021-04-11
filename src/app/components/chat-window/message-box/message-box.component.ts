@@ -1,7 +1,6 @@
-import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Output, Renderer2, ViewChild,EventEmitter } from '@angular/core';
 import {Message} from 'src/shared/message';
 import { User } from 'src/shared/user';
-import {users} from 'src/shared/Mock data/users';
 
 import {LoginSignupService} from 'src/app/services/login-signup.service';
 
@@ -17,6 +16,7 @@ export class MessageBoxComponent implements OnInit {
   @Input() message:Message;
   @ViewChild('caret') caretButton:ElementRef;
   @ViewChild('msg') msgBox:ElementRef;
+  @Output() deleteMessageEvent = new EventEmitter<Message>();
 
   timing:string;
   messageOptionHide=true;
@@ -47,6 +47,10 @@ export class MessageBoxComponent implements OnInit {
 
   caretClicked(){
     this.messageOptionHide=!this.messageOptionHide;
+  }
+
+  deleteMessageEventHandler(){
+    this.deleteMessageEvent.emit(this.message);
   }
 
 }

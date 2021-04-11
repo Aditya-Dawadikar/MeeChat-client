@@ -15,14 +15,15 @@
   position: fixed;
   left: calc(50vw - 250px);
   top: 150px;
-  background-color: azure;
+  background-color: #3F4652;
   z-index: 2000;
-  box-shadow: rgba(155, 228, 247, 0.5) 0px 14px 28px, rgba(155, 228, 247, 0.5) 0px 10px 10px;
+  box-shadow: rgba(143, 242, 255, 0.856) 0px 12px 28px 0px, rgba(143, 242, 255, 0.856) 0px 2px 4px 0px, rgba(143, 242, 255, 0.856) 0px 0px 0px 1px inset;
 }
 
 .cancel-btn{
   position: absolute;
-  right:0px;
+  right:5px;
+  top:5px;
   height: 30px;
   width: 30px;
   cursor: pointer;

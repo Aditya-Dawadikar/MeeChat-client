@@ -1,0 +1,73 @@
+<div class="main">
+  <!--View Account-->
+  <div class="container" id="profile" *ngIf="State==0">
+    <div class="hero">
+      <div class="avatar-l">
+        <div class="change"><img src="https://img.icons8.com/pastel-glyph/64/000000/image--v1.png"/></div>
+      </div>
+      <div class="info">
+        <div class="user-name">
+          <!-- {{me.userName}}
+          <div class="user-id">#{{me.id}}</div>-->
+          Aditya Dawadikar
+          <div class="user-id">#1</div>
+        </div>
+        <div class="status">chaotic</div>
+        <br>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--Friends search-->
+  <div class="container" id="utility" *ngIf="State==1">
+    <div class="mid">
+      <div class="setting" [class]="{'active':currOption==0 && State==1}" (click)="setCurrentOption(0)">
+        All friends
+      </div>
+      <div class="setting" [class]="{'active':currOption===1 && State==1}" (click)="setCurrentOption(1)">
+        Blocked
+      </div>
+    </div>
+    <!-- <div class="right" *ngIf="hideFriendView===false"> -->
+    <div class="right">
+      <div class="optionList" *ngIf="currOption==0 && State==1" id="friendList">
+        <app-friend-finder [friends]=friends></app-friend-finder>
+        <app-friend-profile></app-friend-profile>
+      </div>
+      <div class="optionList" *ngIf="currOption==1 && State==1" id="blockList">
+        <app-friend-finder [friends]=blocked></app-friend-finder>
+        <app-friend-profile></app-friend-profile>
+      </div>
+    </div>
+  </div>
+
+  <!--Settings view-->
+  <div class="container" id="utility" *ngIf="State==2">
+    <div class="mid">
+      <div class="setting" [class]="{'active':currOption==0 && State==2}" (click)="setCurrentOption(0)">
+        Notification
+      </div>
+      <div class="setting" [class]="{'active':currOption==1 && State==2}" (click)="setCurrentOption(1)">
+        Privacy
+      </div>
+      <div class="setting" [class]="{'active':currOption==2 && State==2}" (click)="setCurrentOption(2)">
+        Invite Friend
+      </div>
+    </div>
+    <div class="right">
+      <div class="optionList" *ngIf="currOption==0 && State==2" id="Notification">
+        notification options
+        <app-setting-panel></app-setting-panel>
+      </div>
+      <div class="optionList" *ngIf="currOption==1 && State==2" id="Privacy">
+        privacy options
+        <app-setting-panel></app-setting-panel>
+      </div>
+      <div class="optionList" *ngIf="currOption==2 && State==2" id="invite">
+        invitation
+        <app-setting-panel></app-setting-panel>
+      </div>
+    </div>
+  </div>
+</div>

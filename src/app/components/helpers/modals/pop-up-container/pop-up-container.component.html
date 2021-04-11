@@ -1,5 +1,11 @@
 <div class="block" *ngIf="show===true" #blockScreen></div>
 <div class="container" *ngIf="show===true" #modal>
-  <img src="https://img.icons8.com/dotty/80/000000/cancel.png" class="cancel-btn" (click)="closeModal()">
-  <div class="inner-container"></div>
+  <img src="https://img.icons8.com/metro/26/ffffff/cancel.png" class="cancel-btn" (click)="closeModal()">
+  <div class="inner-container">
+    <app-share-with-friends *ngIf="state===0"></app-share-with-friends>
+    <app-delete-message *ngIf="state===1" (closeModal)="closeModal()"></app-delete-message>
+    <app-mini-profile-viewer *ngIf="state===2" [user]="user"></app-mini-profile-viewer>
+    <app-block-user *ngIf="state===3" (closeModal)="closeModal()"></app-block-user>
+    <app-clear-chat *ngIf="state===4" (closeModal)="closeModal()"></app-clear-chat>
+  </div>
 </div>

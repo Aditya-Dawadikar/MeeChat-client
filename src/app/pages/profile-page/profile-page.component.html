@@ -5,78 +5,19 @@
     </div>
     <div class="seperator"></div>
     <ul class="ul-item">
-      <li class="utility" [class]="{'active':currentState==state[0]}" (click)="showAccount()">
+      <li class="utility" [class]="{'active':currState==0}" (click)="showAccount()">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/key.png" class="icon-utility">Account
       </li>
       <div class="line"></div>
-      <li class="utility"  [class]="{'active':currentState==state[1]}" (click)="showFriends()">
+      <li class="utility"  [class]="{'active':currState==1}" (click)="showFriends()">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/friends.png" class="icon-utility">Friends
       </li>
       <div class="line"></div>
-      <li class="utility" [class]="{'active':currentState==state[2]}" (click)="showNotifications()">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/bell.png" class="icon-utility">Notifications
+      <li class="utility" [class]="{'active':currState==2}" (click)="showSettings()">
+        <img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/gear.png" class="icon-utility" style="position: relative;top:2px">Settings
       </li>
       <div class="line"></div>
     </ul>
   </div>
-  <div class="main">
-    <!-- Account view -->
-    <div *ngIf="currentState===state[0]">
-      <div class="hero">
-        <div class="avatar-l">
-          <div class="change"><img src="https://img.icons8.com/pastel-glyph/64/000000/image--v1.png"/></div>
-        </div>
-      </div>
-      <div class="seperator"></div>
-      <div class="info">
-        <div class="user-name">
-          {{me.userName}}
-          <div class="user-id">#{{me.id}}</div>
-        </div>
-        <div class="status">chaotic</div>
-        <br>
-        <div class="line"></div>
-      </div>
-    </div>
-
-    <!-- Friends view -->
-    <div class="container" *ngIf="currentState===state[1]" >
-      <div class="mid">
-        <div class="setting" [class]="{'active':currentOption===friendOptions[0]}" (click)="setFriendOption(0)">
-          All friends
-        </div>
-        <div class="setting" [class]="{'active':currentOption===friendOptions[1]}" (click)="setFriendOption(1)">
-          Blocked
-        </div>
-      </div>
-      <div class="right" *ngIf="hideFriendView===false">
-        <div class="userList" *ngIf="currentOption===friendOptions[0]" id="friendList">
-          <app-friend-finder [friends]=friends></app-friend-finder>
-          <app-friend-profile></app-friend-profile>
-        </div>
-        <div class="userList" *ngIf="currentOption===friendOptions[1]" id="blockList">
-          <app-friend-finder [friends]=blocked></app-friend-finder>
-          <app-friend-profile></app-friend-profile>
-        </div>
-      </div>
-    </div>
-
-    <!-- Notifications view -->
-    <div class="container" *ngIf="currentState===state[2]">
-      <div class="mid">
-        <div class="setting" [class]="{'active':currentOption==notificationOptions[0]}" (click)="setNotificationOption(0)">
-          Volume
-        </div>
-        <div class="setting" [class]="{'active':currentOption==notificationOptions[1]}" (click)="setNotificationOption(1)">
-          Ringtone
-        </div>
-        <div class="setting" [class]="{'active':currentOption==notificationOptions[2]}" (click)="setNotificationOption(2)">
-          Mute All notification
-        </div>
-      </div>
-      <div class="right">
-      </div>
-    </div>
-
-  </div>
+  <app-control-panel [State]="currState"></app-control-panel>
 </div>

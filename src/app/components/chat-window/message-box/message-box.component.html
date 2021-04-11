@@ -9,7 +9,7 @@
       <img src="../../../../assets/sent.png" class="read" *ngIf="message.meta.seen===false && message.sender===user.userName">
       <img src="../../../../assets/seen.png" class="read" *ngIf="message.meta.seen===true && message.sender===user.userName">
     </div>
-    <app-message-options [state]="messageOptionHide" #msg></app-message-options>
+    <app-message-options [state]="messageOptionHide" (deleteMessageEvent)="deleteMessageEventHandler()" [message]="message" #msg></app-message-options>
 </div>
 
 

@@ -1,0 +1,60 @@
+.profile{
+  background-color: #3F4652;
+  height: 100%;
+}
+
+.bg-style{
+  height: 150px;
+  background-color: #97A3AA;
+}
+
+.avatar{
+  height: 200px;
+  width: 200px;
+  background-color: azure;
+  position: relative;
+  top:-100px;
+  left:125px;
+  box-shadow: rgba(143, 242, 255, 0.856) 0px 12px 28px 0px, rgba(143, 242, 255, 0.856) 0px 2px 4px 0px, rgba(143, 242, 255, 0.856) 0px 0px 0px 1px inset;
+}
+
+.info{
+  position: relative;
+  top:-70px;
+  height: 200px;
+}
+
+.user-name-container{
+  display: flex;
+  cursor: pointer;
+}
+
+.username{
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.userid{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  top:10px;
+  margin-left: 20px;
+}
+
+.status{
+  position: relative;
+  top:10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.line{
+  background-color: azure;
+  height: 1px;
+  position: relative;
+  top:30px;
+}

@@ -36,7 +36,6 @@ export class FriendsListComponent implements OnInit {
       }
     }
     this.loadChatServiceObject.openChat(friendUser);
-    console.clear();
   }
 
 }

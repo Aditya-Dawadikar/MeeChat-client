@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output } from '@angular/core';
+import {DeleteMessageService} from 'src/app/services/messagingServices/delete-message.service';
 
 @Component({
   selector: 'app-delete-message',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteMessageComponent implements OnInit {
 
-  constructor() { }
+  @Output() closeModal=new EventEmitter();
+
+  constructor(
+    private deleteMessageObject:DeleteMessageService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  delete(){
+    this.deleteMessageObject.setDeleteFlag();
+    this.closeModal.emit();
   }
 
 }

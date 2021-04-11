@@ -14,17 +14,11 @@ export class ProfilePageComponent implements OnInit {
 
 
   state=['account','friends','notifications'];
+  states=['account','friends','settings'];
   friendOptions=['all friends','blocked'];
   notificationOptions=['volume','ringtone','mute all notifications'];
 
-  currentState:string;
-  currentOption:string;
-  hideFriendView:boolean;
-  hideAll:boolean;
-
-  me:User;
-  friends:Friend[];
-  blocked:Friend[];
+  currState:number;
 
   constructor(
       private router:Router,
@@ -33,36 +27,18 @@ export class ProfilePageComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    //this.me=users[0];
-    this.me=this.authUserObject.getAuthUser();
-    this.currentState=this.state[0];
-    this.currentOption=this.friendOptions[0];
-    this.hideFriendView=false;
-    this.friends=this.me.friends;
-    this.blocked=this.me.blocked;
+    this.currState=0;
   }
 
   //show views
   showAccount(){
-    this.currentState=this.state[0];
+    this.currState=0;
   }
   showFriends(){
-    this.setFriendOption(0);
-    this.currentState=this.state[1];
-    this.hideFriendView=false;
+    this.currState=1;
   }
-  showNotifications(){
-    this.setNotificationOption(0);
-    this.currentState=this.state[2];
-  }
-
-  //show options and settings
-  setFriendOption(index:number){
-    this.currentOption=this.friendOptions[index];
-  }
-
-  setNotificationOption(index:number){
-    this.currentOption=this.notificationOptions[index];
+  showSettings(){
+    this.currState=2;
   }
 
   //navigation

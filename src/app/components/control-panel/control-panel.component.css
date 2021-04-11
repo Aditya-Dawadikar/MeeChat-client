@@ -1,0 +1,157 @@
+.page{
+  background-color: #3F4652;
+  height: 100vh;
+  display: flex;
+}
+
+.left{
+  width: 30vw;
+  background-color: #29313D;
+  box-shadow: rgba(221, 221, 253, 0.658) 0px 1px 0px, rgba(221, 221, 253, 0.658) 0px 0px 3px;
+}
+
+.main{
+  width: 70vw;
+}
+
+.hero{
+  height: 100vh;
+  box-shadow: rgba(221, 221, 253, 0.658) 0px 1px 0px, rgba(221, 221, 253, 0.658) 0px 0px 3px;
+  width: 534px;
+}
+
+.seperator{
+  height: 150px;
+}
+
+.avatar-l{
+  height: 200px;
+  width: 200px;
+  position: relative;
+  top:20px;
+  /* left: calc(30vw + 70vh - 100px); */
+  left: 150px;
+  background-color: azure;
+  box-shadow: rgba(151, 243, 255, 0.603) 0px 25px 50px -12px;
+}
+
+.change{
+  position: relative;
+  top:70px;
+  left:65px;
+  opacity: 0.5;
+}
+
+.change:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.info{
+  height: 50px;
+  font-weight: bold;
+  color: white;
+  font-size: 32px;
+  position: relative;
+  width: 100%;
+  top:100px;
+}
+
+.line{
+  height: 2px;
+  background-color: #97A3AA;
+}
+
+.user-name{
+  padding-left:50px ;
+  display: flex;
+}
+
+.user-id{
+  margin-left: 10px;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.status{
+  font-size: 18px;
+  padding-left:80px ;
+  color: black;
+  margin-top: 10px;
+}
+
+.utility{
+  height: 70px;
+  color: white;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 25px;
+}
+
+.utility:hover{
+  background-color: #7951EA;
+  cursor: pointer;
+}
+
+.icon-utility{
+  height: 20px;
+  width: 20px;
+  margin-right: 20px;
+}
+
+#back{
+  position: relative;
+  margin-left: 10px;
+  top:2px;
+}
+
+.hide{
+  display: none;
+}
+
+.setting{
+  height: 50px;
+  color:white;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.setting:hover{
+  background-color: #7951EA;
+  color:black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mid{
+  width: 30vh;
+  height: 100vh;
+  box-shadow: rgba(221, 221, 253, 0.658) 0px 1px 0px, rgba(221, 221, 253, 0.658) 0px 0px 3px;
+}
+
+.right{
+  width: 20vw;
+  box-shadow: rgba(221, 221, 253, 0.658) 0px 1px 0px, rgba(221, 221, 253, 0.658) 0px 0px 3px;
+  /* display: flex; */
+}
+
+.optionList{
+  width: 40vw;
+  display: flex;
+}
+
+.active{
+  background-color: #7951EA;
+}
+
+.container{
+  display: flex;
+}
+
+.show{
+  display: block;
+}

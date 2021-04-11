@@ -1,12 +1,12 @@
-<div class="chat-window">
-    <div [class.hide]="windowStatus===false">
+<div class="chat-window" >
+    <div *ngIf="isLoaded">
         <div class="top-bar-container">
-            <app-top-bar-friend [userName]=friend.userName [father]="'friendProfile'"></app-top-bar-friend>
+            <app-top-bar-friend [friend]=friend ></app-top-bar-friend>
         </div>
         <div class="chat-area">
             <ul class="chats" id="style-4" #chats>
                 <li *ngFor="let message of messages">
-                    <app-message-box [message]=message></app-message-box>
+                    <app-message-box (deleteMessageEvent)="deleteMessage($event)" [message]=message></app-message-box>
                 </li>
             </ul>
         </div>

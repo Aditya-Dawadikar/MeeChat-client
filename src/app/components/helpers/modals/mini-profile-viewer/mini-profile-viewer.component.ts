@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { User } from 'src/shared/user';
 
 @Component({
   selector: 'app-mini-profile-viewer',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiniProfileViewerComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
+
+  @Input() user:User;
 
   ngOnInit(): void {
   }

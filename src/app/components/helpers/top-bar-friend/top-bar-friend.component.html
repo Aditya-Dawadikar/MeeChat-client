@@ -1,28 +1,24 @@
 <div class="top-bar" >
     <div class="avatar-mid"></div>
-    <div class="user-name" (click)='showModal()'>{{userName}}</div>
+    <div class="user-name" (click)='showModal(2)'>{{friend.userName}}</div>
     <img src="https://img.icons8.com/material-two-tone/24/ffffff/menu-2.png" class="menu-btn" #menuButton (click)="toggleMenu()">
 </div>
 
-
-<app-pop-up-container [show]="show" (cancelModal)="closeModal()"></app-pop-up-container>
-
-<div class="menu-box" [class.hide]="menuStatus" #menuBox>
+<div class="menu-box" *ngIf="menuStatus===true" #menuBox>
     <ul class="ul-item">
         <li>
-            <div class="li-item">Profile</div>
+            <div class="li-item" (click)='showModal(2)'>Profile</div>
         </li>
         <li>
-            <div class="li-item">Chat Settings</div>
-        </li>
-        <li>
-            <div class="li-item">Clear Chat</div>
+            <div class="li-item" (click)='showModal(4)'>Clear Chat</div>
         </li>
         <li>
             <div class="li-item">Mute Notifications</div>
         </li>
         <li>
-            <div class="li-item">Block</div>
+            <div class="li-item" (click)='showModal(3)'>Block</div>
         </li>
     </ul>
 </div>
+
+<app-pop-up-container [show]="show" [state]="option" (cancelModal)="closeModal()"></app-pop-up-container>

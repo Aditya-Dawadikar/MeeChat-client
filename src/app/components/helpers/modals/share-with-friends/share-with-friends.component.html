@@ -1,1 +1,15 @@
-<p>share-with-friends works!</p>
+<div class="share">
+  <div class="search-bar">
+    <input class="search-input" type="text" #searchFriend>
+    <div class="selected" id="style-3">{{selectedFriendNames}}</div>
+  </div>
+  <div class="active">
+    <ul class="friends-list" id="style-4">
+      <li *ngFor="let friend of user.friends" (click)="selectFriends(friend)">
+        <app-friend-card [friend]=friend></app-friend-card>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<button (click)="share()" class="send-button"><img src="../../../../assets/sendButton.svg"></button>

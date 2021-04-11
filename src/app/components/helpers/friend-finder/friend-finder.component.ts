@@ -29,8 +29,4 @@ export class FriendFinderComponent implements OnInit {
     this.loadProfileObject.loadUserProfile(targetProfile);
   }
 
-  initializeView(targetProfile:User){
-    this.loadProfileObject.loadUserProfile(targetProfile);
-  }
-
 }

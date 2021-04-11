@@ -23,6 +23,10 @@ import { PopUpContainerComponent } from './components/helpers/modals/pop-up-cont
 import { MiniProfileViewerComponent } from './components/helpers/modals/mini-profile-viewer/mini-profile-viewer.component';
 import { ShareWithFriendsComponent } from './components/helpers/modals/share-with-friends/share-with-friends.component';
 import { DeleteMessageComponent } from './components/helpers/modals/delete-message/delete-message.component';
+import { BlockUserComponent } from './components/helpers/modals/block-user/block-user.component';
+import { ClearChatComponent } from './components/helpers/modals/clear-chat/clear-chat.component';
+import { ControlPanelComponent } from './components/control-panel/control-panel.component';
+import { SettingPanelComponent } from './components/helpers/setting-panel/setting-panel.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { DeleteMessageComponent } from './components/helpers/modals/delete-messa
     MiniProfileViewerComponent,
     ShareWithFriendsComponent,
     DeleteMessageComponent,
+    BlockUserComponent,
+    ClearChatComponent,
+    ControlPanelComponent,
+    SettingPanelComponent,
   ],
   imports: [
     BrowserModule,
