@@ -27,6 +27,8 @@ import { BlockUserComponent } from './components/helpers/modals/block-user/block
 import { ClearChatComponent } from './components/helpers/modals/clear-chat/clear-chat.component';
 import { ControlPanelComponent } from './components/control-panel/control-panel.component';
 import { SettingPanelComponent } from './components/helpers/setting-panel/setting-panel.component';
+import { FindUsersComponent } from './components/helpers/find-users/find-users.component';
+import { UserCardComponent } from './components/helpers/find-users/user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { SettingPanelComponent } from './components/helpers/setting-panel/settin
     ClearChatComponent,
     ControlPanelComponent,
     SettingPanelComponent,
+    FindUsersComponent,
+    UserCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 .top-bar {
-    width: calc(100% - 3px);
+    width: calc(100% - 2px);
     height: 100%;
     background-color: #7951EA;
     display: flex;

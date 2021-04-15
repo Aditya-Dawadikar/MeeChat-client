@@ -1,0 +1,66 @@
+.friend{
+  display: flex;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+.friend:hover{
+  background-color: #7951EA;
+}
+
+.avatar{
+  height: 30px;
+  width: 30px;
+  background-color: azure;
+  border-radius: 50%;
+  position: relative;
+  top:10px;
+  left:10px;
+}
+
+.info{
+  color:white;
+  position: relative;
+  top:18px;
+  left:20px;
+}
+
+.user-name{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.status{
+  font-size: 14px;
+}
+
+.active{
+  background-color:#7951EA ;
+}
+
+.container{
+  position: absolute;
+  right: 10px;
+  top:10px;
+  display: flex;
+}
+
+.option{
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+}
+.option:hover{
+  transform: scale(1.1);
+}
+
+#close{
+
+  transition: transform 0.1s;
+}
+
+#close:hover{
+  transform: rotateZ(90deg);
+}

@@ -1,5 +1,6 @@
 .chat-window {
-    width: 1086px;
+    /* width: 1086px; */
+    width:750px;
     height: 100vh;
     position: relative;
     background-color: #3F4652;
@@ -45,7 +46,7 @@
 }
 
 #style-4::-webkit-scrollbar {
-    width: 5px;
+    width: 2px;
     background-color: #F5F5F5;
 }
 

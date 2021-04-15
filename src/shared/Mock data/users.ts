@@ -28,7 +28,34 @@ export const users:User[]=[
         userId:12,
         chatId:0,
       }
-    ]
+    ],
+    requests:{
+      sent:[],
+      received:[
+        {
+          id:13,
+          userName:"test user 1",
+          avatar:"#",
+          friends:[],
+          blocked:[],
+          requests:{
+            sent:[],
+            received:[]
+          }
+        },
+        {
+          id:15,
+          userName:"test user 3",
+          avatar:"#",
+          friends:[],
+          blocked:[],
+          requests:{
+            sent:[],
+            received:[]
+          }
+        }
+      ]
+    }
   },
   {
     id:1,
@@ -47,6 +74,10 @@ export const users:User[]=[
       }
     ],
     blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
   },
   {
     id:2,
@@ -60,6 +91,10 @@ export const users:User[]=[
       }
     ],
     blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
   },
   {
     id:3,
@@ -73,17 +108,79 @@ export const users:User[]=[
       }
     ],
     blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
   },{
     id:11,
     userName:"abc",
     avatar:"#",
     friends:[],
-    blocked:[]
+    blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
   },{
     id:12,
     userName:"def",
     avatar:"#",
     friends:[],
-    blocked:[]
+    blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
+  },{
+    id:13,
+    userName:"test user 1",
+    avatar:"#",
+    friends:[],
+    blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
+  },{
+    id:14,
+    userName:"test user 2",
+    avatar:"#",
+    friends:[],
+    blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
+  },{
+    id:15,
+    userName:"test user 3",
+    avatar:"#",
+    friends:[],
+    blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
+  },{
+    id:16,
+    userName:"test user 4",
+    avatar:"#",
+    friends:[],
+    blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
+  },{
+    id:17,
+    userName:"test user 5",
+    avatar:"#",
+    friends:[],
+    blocked:[],
+    requests:{
+      sent:[],
+      received:[]
+    }
   },
 ]

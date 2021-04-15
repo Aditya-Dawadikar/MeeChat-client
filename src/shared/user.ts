@@ -6,4 +6,8 @@ export interface User{
   avatar:string;
   friends:Friend[];
   blocked:Friend[];
+  requests:{
+    sent:User[],
+    received:User[]
+  };
 }

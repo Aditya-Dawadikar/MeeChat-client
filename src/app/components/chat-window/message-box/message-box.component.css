@@ -1,5 +1,5 @@
 .message {
-    width: 500px;
+    width: 400px;
     margin: 5px 5px;
     padding: 20px 10px;
     border-radius: 10px;
@@ -21,7 +21,8 @@
 
 .me {
     position: relative;
-    left: 570px;
+    /* left: 570px; */
+    left:333px;
 }
 
 .caret{
@@ -40,7 +41,7 @@
   font-size: 12px;
   position: relative;
   bottom: -10px;
-  left:430px;
+  left:330px;
 }
 .read{
   position: relative;

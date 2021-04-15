@@ -96,7 +96,11 @@ export class LoginPageComponent implements OnInit {
       id:users.length,
       avatar:"#",
       friends:[],
-      blocked:[]
+      blocked:[],
+      requests:{
+        sent:[],
+        received:[]
+      }
     }
     let newAuthUser:Auth={
       userName:this.signupObject.email,

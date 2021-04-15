@@ -40,7 +40,34 @@ export class LoginSignupService {
         userId:12,
         chatId:0,
       }
-    ]
+    ],
+    requests:{
+      sent:[],
+      received:[
+        {
+          id:13,
+          userName:"test user 1",
+          avatar:"#",
+          friends:[],
+          blocked:[],
+          requests:{
+            sent:[],
+            received:[]
+          }
+        },
+        {
+          id:15,
+          userName:"test user 3",
+          avatar:"#",
+          friends:[],
+          blocked:[],
+          requests:{
+            sent:[],
+            received:[]
+          }
+        }
+      ]
+    }
   };
 
   setAuthUser(user:User){

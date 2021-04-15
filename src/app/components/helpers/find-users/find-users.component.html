@@ -1,0 +1,31 @@
+<div class="find-user">
+  <div class="top">
+    <div class="search-container">
+      <input class="search-bar" type="text" placeholder="find someone....">
+      <img class="search-btn" src="../../../../assets/Search.png">
+    </div>
+    <div class="tabs">
+      <div class="tab" (click)="viewUsers()" [class]="{'active-tab':tab==1}"><img class="icon" src="../../../../assets/add user.png"></div>
+      <div class="tab" (click)="viewRequests()" [class]="{'active-tab':tab==2}"><img class="icon" style="width: 30px;height: 30px;" src="../../../../assets/notification.png"></div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="container">
+    <div class="find" *ngIf="tab==1">
+      <ul class="listing" id="style-4">
+        <li *ngFor="let user of userList">
+          <app-user-card [user]=user [state]=1></app-user-card>
+        </li>
+      </ul>
+    </div>
+
+    <div class="requests" *ngIf="tab==2">
+      <ul class="listing" id="style-4">
+        <li *ngFor="let user of requestList">
+          <app-user-card [user]=user [state]=2></app-user-card>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

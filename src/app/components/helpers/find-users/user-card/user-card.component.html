@@ -1,0 +1,12 @@
+<div class="friend" #card [class]="{'active':clicked==true}" #card>
+  <div class="avatar"></div>
+  <div class="info">
+    <div class="user-name">{{user.userName}}</div>
+    <div class="status"></div>
+  </div>
+  <div class="container">
+    <img class="option" *ngIf="state==1" src="../../../../../assets/add user.png" (click)="sendRequest()">
+    <img class="option" *ngIf="state==2" src="../../../../../assets/add user.png" (click)="acceptRequest()">
+    <img class="option" id="close" *ngIf="state==2" src="https://img.icons8.com/metro/26/ffffff/cancel.png" (click)="removeRequest()">
+  </div>
+</div>

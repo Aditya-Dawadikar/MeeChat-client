@@ -13,8 +13,8 @@
 
 .chat-input-box {
     margin-top: 5px;
-    width: 900px;
-    height: 90px;
+    width: 550px;
+    height: 70px;
     padding: 3px 3px;
     outline: none;
 }
@@ -30,8 +30,8 @@
     border-radius: 50%;
     border-style: none;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 50px;
 }
 
 .send-button:hover {

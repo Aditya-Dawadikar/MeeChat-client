@@ -25,5 +25,25 @@ export const AuthenticatedUsers:Auth[]=[
     id:5,
     userName:'def',
     password:'123'
+  },{
+    id:6,
+    userName:'test user 1',
+    password:'123'
+  },{
+    id:7,
+    userName:'test user 2',
+    password:'123'
+  },{
+    id:8,
+    userName:'test user 3',
+    password:'123'
+  },{
+    id:9,
+    userName:'test user 4',
+    password:'123'
+  },{
+    id:10,
+    userName:'test user 5',
+    password:'123'
   },
 ];
