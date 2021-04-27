@@ -1,27 +1,46 @@
-# Meechatclient
+### Running the app:
+step1. clone the repository  
+step2. install nodejs,npm
+step3. open a terminal
+step4. run command "npm i -g @angular/cli"
+step5. open a terminal in the root folder after cloning
+step4. run command "npm i"
+step5. run command "npm start"
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+### views
+1. Signup and Login  
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/signup.png)
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/login.png)
 
-## Development server
+2. Landing page
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/chat%20page.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. My account
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/my%20account.png)
 
-## Code scaffolding
+4. Settings
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/settings.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+5. Friend Profiles
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/friend%20profile.png)
 
-## Build
+6. Find people
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/find%20users.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+7. Accept friend requests
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/Friend%20requests.png)
 
-## Running unit tests
+8. profile options
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/profile%20options.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+9. friend options
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/friend%20options.png)
 
-## Running end-to-end tests
+10. message options
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/message%20options.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+11. forward message
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/forward%20message%20to%20friends.png)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+12. delete message
+![screenshot](https://github.com/Aditya-Dawadikar/MeeChat-client/blob/master/views/delete%20message.png)
