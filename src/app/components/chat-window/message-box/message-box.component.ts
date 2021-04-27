@@ -20,6 +20,7 @@ export class MessageBoxComponent implements OnInit {
 
   timing:string;
   messageOptionHide=true;
+  activate=false;
 
   constructor(
     private rendered: Renderer2,
@@ -51,6 +52,10 @@ export class MessageBoxComponent implements OnInit {
 
   deleteMessageEventHandler(){
     this.deleteMessageEvent.emit(this.message);
+  }
+
+  activateMessage(){
+    this.activate=true;
   }
 
 }

@@ -13,6 +13,7 @@ export class ShareMessageService {
   messageObserver = this.messageSource.asObservable();
 
   shareableMessage:Message;
+  shareableMessageQueue:Message[];
 
   getShareableMessage(){
     return this.shareableMessage;
@@ -21,4 +22,17 @@ export class ShareMessageService {
   setShareableMessage(message:Message){
     this.shareableMessage=message;
   }
+
+  pushToQueue(message:Message){
+    this.shareableMessageQueue.push(message);
+  }
+
+  getMessageQueue(){
+    return this.shareableMessageQueue;
+  }
+
+  clearMessageQueue(){
+    this.shareableMessageQueue=[];
+  }
+
 }

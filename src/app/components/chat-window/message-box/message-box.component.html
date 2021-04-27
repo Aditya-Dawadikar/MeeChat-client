@@ -1,4 +1,4 @@
-<div class="message" [ngClass]="{'me':message.sender===this.user.userName}">
+<div class="message" [ngClass]="{'me':message.sender===this.user.userName,'activate':activate==true}">
     <img src="https://img.icons8.com/material-two-tone/24/ffffff/expand-arrow--v1.png" class="caret" #caret (click)="caretClicked()">
     <div class="sender">{{message.sender}}</div>
     <div class="gap"></div>
@@ -9,7 +9,8 @@
       <img src="../../../../assets/sent.png" class="read" *ngIf="message.meta.seen===false && message.sender===user.userName">
       <img src="../../../../assets/seen.png" class="read" *ngIf="message.meta.seen===true && message.sender===user.userName">
     </div>
-    <app-message-options [state]="messageOptionHide" (deleteMessageEvent)="deleteMessageEventHandler()" [message]="message" #msg></app-message-options>
+    <!-- <app-message-options [state]="messageOptionHide" (deleteMessageEvent)="deleteMessageEventHandler()" [message]="message" #msg></app-message-options> -->
+    <app-message-options [state]="messageOptionHide" [message]="message" #msg></app-message-options>
 </div>
 
 

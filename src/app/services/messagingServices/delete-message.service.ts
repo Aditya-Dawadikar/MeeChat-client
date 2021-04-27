@@ -17,6 +17,7 @@ export class DeleteMessageService {
 
   deleteableMessage:Message;
   deleteFlag:boolean;
+  deleteableMessageQueue:Message[];
 
   setDeleteFlag(){
     this.deleteFlag=true;
@@ -38,5 +39,12 @@ export class DeleteMessageService {
 
   getDeleteableMessage(){
     return this.deleteableMessage;
+  }
+
+  pushToQueue(message:Message){
+    this.deleteableMessageQueue.push(message);
+  }
+  getMessageQueue(){
+    return this.deleteableMessageQueue;
   }
 }

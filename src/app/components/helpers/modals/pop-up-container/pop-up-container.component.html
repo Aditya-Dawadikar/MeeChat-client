@@ -2,7 +2,7 @@
 <div class="container" *ngIf="show===true" #modal>
   <img src="https://img.icons8.com/metro/26/ffffff/cancel.png" class="cancel-btn" (click)="closeModal()">
   <div class="inner-container">
-    <app-share-with-friends *ngIf="state===0"></app-share-with-friends>
+    <app-share-with-friends *ngIf="state===0" (closeModal)="closeModal()"></app-share-with-friends>
     <app-delete-message *ngIf="state===1" (closeModal)="closeModal()"></app-delete-message>
     <app-mini-profile-viewer *ngIf="state===2" [user]="user"></app-mini-profile-viewer>
     <app-block-user *ngIf="state===3" (closeModal)="closeModal()"></app-block-user>

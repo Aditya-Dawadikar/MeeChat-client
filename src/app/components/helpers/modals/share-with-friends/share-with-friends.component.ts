@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Output,EventEmitter } from '@angular/core';
 import { User } from 'src/shared/user';
 import { Friend } from 'src/shared/friend';
 import {Message} from 'src/shared/message';
@@ -18,6 +18,8 @@ export class ShareWithFriendsComponent implements OnInit {
   selectedFriends=[];
   selectedFriendNames:String;
   messageBody:string;
+
+  @Output() closeModal=new EventEmitter();
 
   constructor(
     private authUserObject:LoginSignupService,
@@ -64,6 +66,7 @@ export class ShareWithFriendsComponent implements OnInit {
         Chats[chatId].conversation.push(message);
       }
     }
+    this.closeModal.emit();
   }
 
 }

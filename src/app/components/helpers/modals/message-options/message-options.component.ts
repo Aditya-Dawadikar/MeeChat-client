@@ -12,7 +12,8 @@ export class MessageOptionsComponent implements OnInit {
 
   @Input() state:boolean;
   @Input() message:Message;
-  @Output() deleteMessageEvent= new EventEmitter();
+  @Output() activateMessageEvent = new EventEmitter();
+  //@Output() deleteMessageEvent= new EventEmitter();
 
   show:boolean;
   states:["share","delete"];
@@ -31,6 +32,7 @@ export class MessageOptionsComponent implements OnInit {
     this.show=true;
     this.option=0;
     this.shareMessageObject.setShareableMessage(this.message);
+    //this.activateMessageEvent.emit();
   }
 
   deleteMessage(){
