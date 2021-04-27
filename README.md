@@ -1,10 +1,10 @@
 ### Running the app:
 step1. clone the repository  
 step2. install nodejs,npm
-step3. open a terminal
-step4. run command "npm i -g @angular/cli"
-step5. open a terminal in the root folder after cloning
-step4. run command "npm i"
+step3. open a terminal  
+step4. run command "npm i -g @angular/cli"  
+step5. open a terminal in the root folder after cloning  
+step4. run command "npm i"  
 step5. run command "npm start"
 
 ### views
